@@ -1,10 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReduxers, compose } from 'redux';
+import { thunkMiddleware } from 'redux-thunk';
+import createLogger from 'redux-logger';
 import {
   Platform,
   StyleSheet,
@@ -19,12 +17,13 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component<{}> {
+export default class App extends Component {
   render() {
+    console.log('Hello Dev Tools!');
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to React Native, ya jerk!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
